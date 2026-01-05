@@ -91,7 +91,7 @@ When you ask a question, the system performs a hybrid search:
 ### 1. Clone Project
 
 ```bash
-git clone https://github.com/tblock-zz/ragMe.git
+git clone https://github.com/tblock-zz/RagMa.git
 cd ragMe
 ```
 
