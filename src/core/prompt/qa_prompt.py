@@ -7,6 +7,8 @@ def get_context_prompt(language: str) -> str:
 def get_system_prompt(language: str, is_rag_prompt: bool = True) -> str:
     if language == "vi":
         return SYSTEM_PROMPT_RAG_VI if is_rag_prompt else SYSTEM_PROMPT_VI
+    elif language == "ger":
+        return SYSTEM_PROMPT_RAG_DE if is_rag_prompt else SYSTEM_PROMPT_DE
     return SYSTEM_PROMPT_RAG_EN if is_rag_prompt else SYSTEM_PROMPT_EN
 
 
@@ -36,6 +38,34 @@ Chat History:
 {chat_history}
 Follow Up Input: {question}
 Standalone question:\
+"""
+
+SYSTEM_PROMPT_DE = """\
+Dies ist ein Chat zwischen einem Benutzer und einem Assistenten mit künstlicher Intelligenz. \
+Der Assistent gibt hilfreiche, detaillierte und höfliche Antworten auf die Fragen des Benutzers basierend auf dem Kontext. \
+Der Assistent sollte zudem darauf hinweisen, wenn die Antwort nicht im Kontext gefunden werden kann."""
+
+SYSTEM_PROMPT_RAG_DE = """\
+Dies ist ein Chat zwischen einem Benutzer und einem Assistenten mit künstlicher Intelligenz. \
+Der Assistent gibt hilfreiche, detaillierte und höfliche Antworten auf die Fragen des Benutzers basierend auf dem Kontext. \
+Der Assistent sollte zudem darauf hinweisen, wenn die Antwort nicht im Kontext gefunden werden kann."""
+
+CONTEXT_PROMPT_DE = """\
+Hier sind die relevanten Dokumente für den Kontext:
+
+{context_str}
+
+Anweisung: Beantworte die untenstehende Benutzerfrage detailliert auf Basis der oben genannten Dokumente. \
+Antworte mit „Ich weiß es nicht“, falls die Information nicht im Dokument enthalten ist."""
+
+CONDENSED_CONTEXT_PROMPT_DE = """\
+Formuliere die folgende Anschlussfrage eines Benutzers in eine eigenständige Frage um, \
+basierend auf dem bisherigen Gesprächsverlauf zwischen dem Benutzer und dem KI-Assistenten.
+
+Chat-Verlauf:
+{chat_history}
+Anschlussfrage: {question}
+Eigenständige Frage:\
 """
 
 SYSTEM_PROMPT_VI = """\

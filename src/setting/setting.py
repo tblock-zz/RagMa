@@ -1,7 +1,6 @@
 from pydantic import BaseModel, Field
 from typing import List
-
-
+#------------------------------------------------------------------------------
 class OllamaSettings(BaseModel):
     llm: str = Field(default="llama3:8b-instruct-q8_0", description="LLM model")
     keep_alive: str = Field(default="1h", description="Keep alive time for the server")
@@ -15,8 +14,7 @@ class OllamaSettings(BaseModel):
     context_window: int = Field(default=16000, description="Context window size")
     temperature: float = Field(default=0.1, description="Temperature")
     chat_token_limit: int = Field(default=4000, description="Chat memory limit")
-
-
+#------------------------------------------------------------------------------
 class RetrieverSettings(BaseModel):
     num_queries: int = Field(default=5, description="Number of generated queries")
     similarity_top_k: int = Field(default=20, description="Top k documents")
@@ -28,8 +26,7 @@ class RetrieverSettings(BaseModel):
         default="BAAI/bge-reranker-large", description="Rerank LLM model"
     )
     fusion_mode: str = Field(default="dist_based_score", description="Fusion mode")
-
-
+#------------------------------------------------------------------------------
 class IngestionSettings(BaseModel):
     embed_llm: str = Field(
         default="nomic-embed-text", description="Embedding LLM model"
@@ -43,8 +40,7 @@ class IngestionSettings(BaseModel):
     )
     paragraph_sep: str = Field(default="\n \n", description="Paragraph separator")
     num_workers: int = Field(default=0, description="Number of workers")
-
-
+#------------------------------------------------------------------------------
 class StorageSettings(BaseModel):
     persist_dir_chroma: str = Field(
         default="data/chroma", description="Chroma directory"
@@ -54,8 +50,7 @@ class StorageSettings(BaseModel):
     )
     collection_name: str = Field(default="collection", description="Collection name")
     port: int = Field(default=8000, description="Port number")
-
-
+#------------------------------------------------------------------------------
 class RAGSettings(BaseModel):
     ollama: OllamaSettings = OllamaSettings()
     retriever: RetrieverSettings = RetrieverSettings()

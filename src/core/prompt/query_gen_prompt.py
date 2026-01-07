@@ -4,6 +4,8 @@ from llama_index.core import PromptTemplate
 def get_query_gen_prompt(language: str):
     if language == "vi":
         return query_gen_prompt_vi
+    elif language == "ger":
+        return query_gen_prompt_de
     return query_gen_prompt_en
 
 
@@ -17,6 +19,18 @@ query_gen_prompt_vi = PromptTemplate(
     "- Không mơ hồ và không thể hiểu sai\n"
     "- Hữu ích để lấy kết quả tìm kiếm chính xác và liên quan\n"
     "### Các Truy Vấn Được Tạo Ra:\n"
+)
+
+query_gen_prompt_de = PromptTemplate(
+    "Du bist ein talentierter Suchanfrage-Generator, der sich der Bereitstellung genauer und relevanter Suchanfragen widmet, die prägnant, spezifisch und eindeutig sind.\n"
+    "Erstelle {num_queries} einzigartige und vielfältige Suchanfragen, jeweils eine pro Zeile, die sich auf die folgende Eingabeanfrage beziehen:\n"
+    "### Originalanfrage: {query}\n"
+    "### Bitte stelle Suchanfragen bereit, die:\n"
+    "- Relevante zur Originalanfrage sind\n"
+    "- Gut definiert und spezifisch sind\n"
+    "- Frei von Mehrdeutigkeiten und Unklarheiten sind\n"
+    "- Nützlich sind, um genaue und relevante Suchergebnisse abzurufen\n"
+    "### Generierte Anfragen:\n"
 )
 
 query_gen_prompt_en = PromptTemplate(

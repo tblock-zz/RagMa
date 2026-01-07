@@ -79,12 +79,6 @@ class LocalDataIngestion:
     def check_nodes_exist(self):
         return len(self._node_store.values()) > 0
 
-    def get_all_nodes(self):
-        return_nodes = []
-        for nodes in self._node_store.values():
-            return_nodes.extend(nodes)
-        return return_nodes
-
     def get_ingested_nodes(self):
         return_nodes = []
         for file in self._ingested_file:

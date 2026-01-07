@@ -1,8 +1,7 @@
 import os
 import sys
 import re
-
-
+#------------------------------------------------------------------------------
 class Logger:
     def __init__(self, filename):
         self.filename = os.path.join(os.getcwd(), filename)

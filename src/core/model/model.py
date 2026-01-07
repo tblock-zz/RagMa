@@ -47,6 +47,20 @@ class LocalRAGModel:
         )
 
     @staticmethod
+    def get_installed_models() -> list[str]:
+        setting = RAGSettings()
+        try:
+            response = requests.get(f"http://localhost:{setting.ollama.port}/api/tags")
+            if response.status_code == 200:
+                data = response.json()
+                if data["models"] is not None:
+                    return [d["name"] for d in data["models"]]
+        except Exception:
+            pass
+        return []
+
+    # ------------------------------------------------------------------------------
+    @staticmethod
     def check_model_exist(model_name: str) -> bool:
         setting = RAGSettings()
         data = requests.get(f"http://localhost:{setting.ollama.port}/api/tags").json()
