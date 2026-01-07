@@ -1,8 +1,8 @@
 [project]
-name = "rag-chatbot"
+name = "RagMa"
 version = "0.1.0"
 description = ""
-authors = [{ name = "Võ Đình Đạt", email = "vodinhdat03@gmail.com" }]
+authors = [{ name = "Võ Đình Đạt", email = "vodinhdat03@gmail.com" }, { name = "tblock-zz", email = "" }]
 requires-python = ">=3.11"
 readme = "README.md"
 dependencies = [
