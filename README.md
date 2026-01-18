@@ -1,4 +1,4 @@
-# 🤖 RAG based local document chat (pdf, docx, txt, xls, eml)
+# RAG based local document chat (pdf, docx, txt, xls, eml)
 
 ![alt text](assets/demo.png)
 
@@ -130,9 +130,10 @@ Navigate to: `http://127.0.0.1:7860/` once the server is running.
 
 ---
 
-# Notes
+# Credits
 
 This project is based on the [rag-chatbot](https://github.com/datvodinh/rag-chatbot) project.
 
-It has been modified using AI for coding.
+# Notes
+It has been modified also using AI for coding.
 
