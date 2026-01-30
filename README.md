@@ -97,10 +97,14 @@ cd ragMe
 
 ### 2. Installation
 
-#### 2.1 Install `uv` (one-time)
+#### 2.1 Install `uv` (one-time) (Windows11)
 
-```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+winget install astral-sh.uv
+```
+to upgrade use:
+```
+winget upgrade astral-sh.uv
 ```
 
 #### 2.2 Install `Ollama` 
